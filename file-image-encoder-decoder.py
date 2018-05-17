@@ -27,12 +27,12 @@ def encode(file):
 
 	# Get amount of bytes
 	filesize = os.path.getsize(file)
-	print("File size: " + str(filesize) + " bytes")
 
 	decimals = [] # Create empty list will hold decimal values of bytes later on
 
 	# open file (https://stackoverflow.com/a/1035360)
 	print("Opening file: " + file + "..")
+	print("File size: " + str(filesize) + " bytes")
 	with open(file, "rb") as f:
 	    print("Converting bytes to colors..")
 	    
