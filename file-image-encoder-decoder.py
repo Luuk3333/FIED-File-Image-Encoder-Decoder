@@ -12,6 +12,7 @@ parser.add_argument('-DEC', '--decode', help='Select file to decode.', dest="fil
 parser.add_argument('-V', '--verbose', help='Turn verbose mode on/off. Note: Performance may be degraded if this option is used.', dest="verbose", action="store_true", default=False)
 parser.add_argument('--overwrite', help='Danger! Overwrite file without any warning!', dest="overwrite", action="store_true", default=False)
 parser.add_argument('-O', '--output', help='Set output filename when decoding a file.', dest="file_output")
+parser.add_argument('-v', '--version', action='version', version='%(prog)s 1.0')
 args = parser.parse_args()
 
 file_encode = args.file_encode
