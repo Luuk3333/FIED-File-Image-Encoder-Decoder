@@ -49,7 +49,7 @@ Performance may be degraded with verbose mode enabled.
 ### Notes:
 - This code is not optimized. It might perform not as great as you expect.
 - Tested with Python 3, not with Python 2. It may not work with Python 2.
-- It might also not work ---or even crash--- with large files (anywhere from more than a few hundred megabytes)
+- It might also not work –or even crash– with large files (anywhere from more than a few hundred megabytes)
 
 Feel free to report and contribute to any bugs, feature ideas and improvements!
 
