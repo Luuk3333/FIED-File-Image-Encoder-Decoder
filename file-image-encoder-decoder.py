@@ -34,7 +34,7 @@ def encode(file):
 	print("Opening file: " + file + "..")
 	print("File size: " + str(filesize) + " bytes")
 	with open(file, "rb") as f:
-	    print("Converting bytes to colors..")
+	    print("Converting bytes to colors.. (this may take some time)")
 	    
 	    if (verbose): # If verbose set to true, show progress bar
 	        for byte in tqdm(f.read()):
