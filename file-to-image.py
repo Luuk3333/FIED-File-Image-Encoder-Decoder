@@ -40,5 +40,5 @@ resolution = (filesize, 1) # Set width of image to file size (amount of bytes)
 im = Image.new('L', resolution) # Create a grayscale image
 im.putdata(decimals) # Set pixel colors (https://stackoverflow.com/a/2111223)
 print("Saving image..")
-im.save(file + "output.png")
+im.save(file + "._penc_.png") # Pixel ENCoder
 print("Finished!")
