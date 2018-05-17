@@ -56,7 +56,7 @@ def encode(file):
 	resolution = (filesize, 1) # Set width of image to file size (amount of bytes)
 	im = Image.new('L', resolution) # Create a grayscale image
 	im.putdata(decimals) # Set pixel colors (https://stackoverflow.com/a/2111223)
-	file_output = file + "._penc_.png" # Pixel ENCoder
+	file_output = file + "._fied_.png"
 	print("Saving image as \"" + file_output + "\"..")
 	im.save(file_output)
 	print("Finished!")
@@ -70,8 +70,8 @@ def decode(file):
 	if (output != None and output != ""):
 	    original_filename = output
 	else:
-	    # Remove '._penc_.png' to get original filename
-	    original_filename = file.split('._penc_.png')[0]
+	    # Remove '._fied_.png' to get original filename
+	    original_filename = file.split('._fied_.png')[0]
 
 	# Get decimal pixel values and convert it to a bytearray
 	print("Converting pixels to bytes..")

@@ -18,22 +18,22 @@ python main.py --encode myfile.zip
 ```
 python main.py --ENC myfile.zip
 ```
-A png image will be created ending with `._penc_.png`. Opening this image with your avarage image editor will likely not work because of its odd resolution.
+A png image will be created ending with `._fied_.png`. Opening this image with your avarage image editor will likely not work because of its odd resolution.
 
 ##### Decoding a file:
 ```
-python main.py --decode myfile.zip._penc_.png
+python main.py --decode myfile.zip._fied_.png
 ```
 ```
-python main.py -DEC myfile.zip._penc_.png
+python main.py -DEC myfile.zip._fied_.png
 ```
 When decoding, `.\_penc\_.png` will be removed from the filename, so `myfile.zip` will be created.
 If you don't want the original file to be overwritten (for example, while testing) you can set a custom name with the '\-\-output' option:
 ```
-python main.py --decode myfile.zip._penc_.png --output alternative.txt
+python main.py --decode myfile.zip._fied_.png --output alternative.txt
 ```
 ```
-python main.py --decode myfile.zip._penc_.png -O alternative.txt
+python main.py --decode myfile.zip._fied_.png -O alternative.txt
 ```
 
 ##### Verbose mode
