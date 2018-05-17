@@ -6,13 +6,13 @@ from os.path import exists
 
 # Set command-line options
 parser = argparse.ArgumentParser()
-parser.add_argument('-F', '--file', help='Select file to decode.', dest="file")
+parser.add_argument('-DEC', '--decode', help='Select file to decode.', dest="file_decode")
 parser.add_argument('-V', '--verbose', help='Turn verbose mode on/off. Note: Performance may be degraded if this option is used.', dest="verbose", action="store_true", default=False)
 parser.add_argument('--overwrite', help='Danger! Overwrite file without any warning!', dest="overwrite", action="store_true", default=False)
 parser.add_argument('-O', '--output', help='Set output filename.', dest="output")
 args = parser.parse_args()
 
-file = args.file
+file = args.file_decode
 verbose = args.verbose
 overwrite = args.overwrite
 output = args.output

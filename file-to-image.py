@@ -7,11 +7,11 @@ import argparse
 
 # Set command-line options
 parser = argparse.ArgumentParser()
-parser.add_argument('-F', '--file', help='Select file to encode.', dest="file")
+parser.add_argument('-F', '--file', help='Select file to encode.', dest="file_encode")
 parser.add_argument('-V', '--verbose', help='Turn verbose mode on/off. Note: Performance may be degraded if this option is used.', dest="verbose", action="store_true", default=False)
 args = parser.parse_args()
 
-file = args.file
+file = args.file_encode
 verbose = args.verbose
 
 # Get amount of bytes
