@@ -1,10 +1,12 @@
 from PIL import Image
 import os
+from tqdm import tqdm
 
 # Convert any file to an image
 # Store each byte as a pixel with a color from 0 (black) to 255 (white)
 
 file = "myfile.txt"
+verbose = True # Note: Performance may be altered if this option is set to True
 
 # Get amount of bytes
 filesize = os.path.getsize(file)
@@ -17,6 +19,7 @@ print("Opening file: " + file + "..")
 with open(file, "rb") as f:
     byte = f.read(1)
     print("Converting bytes to colors..")
+    if verbose: pbar = tqdm(total=filesize) # If verbose set to true, show progress bar
     while byte:
         # Do stuff with byte.
         byte = f.read(1)
@@ -28,6 +31,8 @@ with open(file, "rb") as f:
 
         # Add decimal value to list
         decimals.append(decimal)
+        if verbose: pbar.update(1)
+    if verbose: pbar.close()
 
 # Create new image
 print("Generating image..")
