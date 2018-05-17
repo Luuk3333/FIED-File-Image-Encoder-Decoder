@@ -1,12 +1,18 @@
 from PIL import Image
 import os
 from tqdm import tqdm
+import argparse
 
-# Convert any file to an image
-# Store each byte as a pixel with a color from 0 (black) to 255 (white)
+## Convert any file to an image by storing each byte as a pixel with a color from 0 (black) to 255 (white)
 
-file = "myfile.txt"
-verbose = True # Note: Performance may be altered if this option is set to True
+# Set command-line options
+parser = argparse.ArgumentParser()
+parser.add_argument('-F', '--file', help='Select file to encode.', dest="file")
+parser.add_argument('-V', '--verbose', help='Turn verbose mode on/off. Note: Performance may be degraded if this option is used.', dest="verbose", action="store_true", default=False)
+args = parser.parse_args()
+
+file = args.file
+verbose = args.verbose
 
 # Get amount of bytes
 filesize = os.path.getsize(file)
