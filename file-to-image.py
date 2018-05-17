@@ -23,22 +23,21 @@ decimals = [] # Create empty list will hold decimal values of bytes later on
 # open file (https://stackoverflow.com/a/1035360)
 print("Opening file: " + file + "..")
 with open(file, "rb") as f:
-    byte = f.read(1)
     print("Converting bytes to colors..")
-    if verbose: pbar = tqdm(total=filesize) # If verbose set to true, show progress bar
-    while byte:
-        # Do stuff with byte.
-        byte = f.read(1)
-        #print(byte)
+    
+    if (verbose): # If verbose set to true, show progress bar
+        for byte in tqdm(f.read()):
+            #print(byte)
 
-        # Convert byte to image
-        decimal = int.from_bytes(byte, byteorder='little')  
-        #print(decimal)
+            # Add decimal value to list
+            decimals.append(byte)
 
-        # Add decimal value to list
-        decimals.append(decimal)
-        if verbose: pbar.update(1)
-    if verbose: pbar.close()
+    else:
+        for byte in f.read():
+            #print(byte)
+
+            # Add decimal value to list
+            decimals.append(byte)
 
 # Create new image
 print("Generating image..")
