@@ -36,7 +36,7 @@ python main.py --decode myfile.zip._fied_.png --output alternative.txt
 python main.py --decode myfile.zip._fied_.png -O alternative.txt
 ```
 
-##### Verbose mode
+##### Verbose mode:
 If you want to see more info you can turn on verbose mode with '\-\-verbose':
 ```
 python main.py --encode myfile.zip --verbose
@@ -46,7 +46,7 @@ python main.py --encode myfile.zip -V
 ```
 Performance may be degraded with verbose mode enabled.
 
-### Notes:
+### Notes
 - This code is not optimized. It might perform not as great as you expect.
 - Tested with Python 3, not with Python 2. It may not work with Python 2.
 - It might also not work –or even crash– with large files (anywhere from more than a few hundred megabytes)
