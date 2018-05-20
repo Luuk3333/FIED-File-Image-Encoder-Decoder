@@ -15,7 +15,7 @@ parser.add_argument('--verbose', help='Turn verbose mode on/off. Note: Performan
 parser.add_argument('--overwrite', help='Danger! Overwrite file without any warning!', dest="overwrite", action="store_true", default=False)
 parser.add_argument('--output', help='Set output filename when decoding a file.', dest="file_output")
 parser.add_argument('--disable-parts', help='Forces generated image not being split up in parts.', dest="disable_parts", action="store_true", default=False)
-parser.add_argument('--max-part-size', help='Max file size in bytes. The generated image will be split up in parts if it is larger. Default is 16000000 bytes.', dest="max_part_size", default=16000000)
+parser.add_argument('--max-part-size', help='Max file size of parts in bytes. The generated image will be split up in parts if it is larger. Default is 128000000 bytes.', dest="max_part_size", default=128000000)
 args = parser.parse_args()
 
 file_encode = args.file_encode
