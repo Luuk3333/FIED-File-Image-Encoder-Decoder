@@ -30,10 +30,10 @@ Or a multiple part file (any part will work):
 ```
 python main.py --decode myfile.zip._fied_7-11_.png
 ```
-When decoding, `.\_penc\_.png` will be removed from the filename, so `myfile.zip` will be created.
+When decoding, `._penc_.png` will be removed from the filename, so `myfile.zip` will be created.
 If you don't want the original file to be overwritten (for example, while testing) you can set a custom name with the '\-\-output' option:
 ```
-python main.py --decode myfile.zip._fied_.png --output alternative.txt
+python main.py --decode myfile.zip._fied_.png --output somefile.zip
 ```
 
 #### Verbose mode:
