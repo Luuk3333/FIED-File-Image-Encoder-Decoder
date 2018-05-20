@@ -20,12 +20,21 @@ python main.py --ENC myfile.zip
 ```
 A png image will be created ending with `._fied_.png`. Opening this image with your avarage image editor will likely not work because of its odd resolution.
 
+###### Multiple parts:
+If a file is larger than 128 MB it will be split up in multiple parts. You can change the part file size with the option `--max-part-size 128000000` with the file size in bytes. Multiple part files end with (for example) `._fied_7-11_.png`, where 7 means the part number and 11 the total amount of parts.
+
+It is also possible to disable the generation of multiple parts with the option `--disable-parts`. Note that when using this option a memory error is likely to occur with files larger than a few hundred megabytes.
+
 ##### Decoding a file:
 ```
 python main.py --decode myfile.zip._fied_.png
 ```
 ```
 python main.py -DEC myfile.zip._fied_.png
+```
+Or a multiple part file (any part will work):
+```
+python main.py --decode myfile.zip._fied_7-11_.png
 ```
 When decoding, `.\_penc\_.png` will be removed from the filename, so `myfile.zip` will be created.
 If you don't want the original file to be overwritten (for example, while testing) you can set a custom name with the '\-\-output' option:
