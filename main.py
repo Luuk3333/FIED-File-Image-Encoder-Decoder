@@ -62,7 +62,7 @@ def encode(file):
 
         decimals = [] # Create empty list will hold decimal values of bytes
 
-        print("    Converting bytes to colors.. (this may take some time)")
+        print("    Converting bytes to colors.. (this may take some time)", end="")
         # Add decimal value to list
         if (verbose): 
             for byte in tqdm(tmp_bytes): 
@@ -70,6 +70,8 @@ def encode(file):
         else:
             for byte in tmp_bytes: 
                 decimals.append(byte)
+
+        print("  --> Done.")
 
         # Create image
         resolution = (len(tmp_bytes), 1) # Set width of image to file size (amount of bytes)
@@ -79,8 +81,9 @@ def encode(file):
             file_output = file + "._fied_.png"
         else:
             file_output = file + "._fied_" + str(count) + "-" + str(number_of_parts) + ".png"
-        print("    Saving image as \"" + file_output + "\"..")
+        print("    Saving image as \"" + file_output + "\"..", end="")
         im.save(file_output)
+        print("  --> Done.")
 
         tmp_bytes = f.read(max_part_size)
         count += 1
@@ -122,17 +125,20 @@ def decode(file):
         print("Original filename: " + original_filename)
 
         # Open image
-        print("Opening image..")
+        print("Opening image..", end="")
         im = Image.open(file)
+        print("  --> Done.")
         
         # Get decimal pixel values and convert it to a bytearray
-        print("    Converting pixels to bytes..")
+        print("    Converting pixels to bytes..", end="")
         pixels = bytes(im.getdata())
+        print("  --> Done.")
         
         # Save file
-        print("    Saving file as '" + original_filename + "'..")
+        print("    Saving file as '" + original_filename + "'..", end="")
         decode_overwrite(original_filename, 1)
         open(original_filename, 'wb').write(pixels)
+        print("  --> Done.")
 
         print("Finished!\n")
 
@@ -146,17 +152,18 @@ def decode(file):
         for part in range(1, number_of_parts + 1):
             # Open image
             file_part = original_filename + "._fied_" + str(part) + "-" + str(number_of_parts) + ".png"
-            print("Opening image '" + file_part + "'..")
-
+            print("Opening image '" + file_part + "'..", end="")
             im = Image.open(file_part)
+            print("  --> Done.")
 
             # Get decimal pixel values and convert it to a bytearray
-            print("    Converting pixels to bytes..")
+            print("    Converting pixels to bytes..", end="")
             pixels = bytes(im.getdata())
+            print("  --> Done.")
 
-            print("    Saving file as '" + original_filename + "'..")
+            print("    Saving file as '" + original_filename + "'..", end="")
             open(original_filename, 'ab').write(pixels) # Append bytes to file
-
+            print("  --> Done.")
 
         print("Finished!\n")
 
