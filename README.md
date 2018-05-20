@@ -1,5 +1,5 @@
 # FIED-File-Image-Encoder-Decoder
-Converts any file to/from a special grayscale image.
+Converts any file to/from a grayscale image.
 
 ### How it works
 This Python script converts any file to a 1-pixel high grayscale png image. The width of the image will be the size of the original file in bytes. The bytes (2^8 = 256) from the original file are converted to pixels with a color from 0 (black) to 255 (white). When decoding, the color of every pixel is converted back to a byte which is written to a file.
@@ -15,9 +15,6 @@ pip install pillow tqdm
 ```
 python main.py --encode myfile.zip
 ```
-```
-python main.py --ENC myfile.zip
-```
 A png image will be created ending with `._fied_.png`. Opening this image with your avarage image editor will likely not work because of its odd resolution.
 
 ###### Multiple parts:
@@ -29,9 +26,6 @@ It is also possible to disable the generation of multiple parts with the option 
 ```
 python main.py --decode myfile.zip._fied_.png
 ```
-```
-python main.py -DEC myfile.zip._fied_.png
-```
 Or a multiple part file (any part will work):
 ```
 python main.py --decode myfile.zip._fied_7-11_.png
@@ -41,24 +35,17 @@ If you don't want the original file to be overwritten (for example, while testin
 ```
 python main.py --decode myfile.zip._fied_.png --output alternative.txt
 ```
-```
-python main.py --decode myfile.zip._fied_.png -O alternative.txt
-```
 
 ##### Verbose mode:
 If you want to see more info you can turn on verbose mode with '\-\-verbose':
 ```
 python main.py --encode myfile.zip --verbose
 ```
-```
-python main.py --encode myfile.zip -V
-```
 Performance may be degraded with verbose mode enabled.
 
 ### Notes
 - This code is not optimized. It might perform not as great as you expect.
 - Tested with Python 3, not with Python 2. It may not work with Python 2.
-- It might also not work –or even crash– with large files (anywhere from more than a few hundred megabytes)
 
 Feel free to report and contribute to any bugs, feature ideas and improvements!
 

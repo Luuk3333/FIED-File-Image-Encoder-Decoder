@@ -9,14 +9,13 @@ import re
 
 # Set command-line options
 parser = argparse.ArgumentParser()
-parser.add_argument('-ENC', '--encode', help='Select file to encode.', dest="file_encode")
-parser.add_argument('-DEC', '--decode', help='Select file to decode.', dest="file_decode")
-parser.add_argument('-V', '--verbose', help='Turn verbose mode on/off. Note: Performance may be degraded if this option is used.', dest="verbose", action="store_true", default=False)
+parser.add_argument('--encode', help='Select file to encode.', dest="file_encode")
+parser.add_argument('--decode', help='Select file to decode.', dest="file_decode")
+parser.add_argument('--verbose', help='Turn verbose mode on/off. Note: Performance may be degraded if this option is used.', dest="verbose", action="store_true", default=False)
 parser.add_argument('--overwrite', help='Danger! Overwrite file without any warning!', dest="overwrite", action="store_true", default=False)
-parser.add_argument('-O', '--output', help='Set output filename when decoding a file.', dest="file_output")
+parser.add_argument('--output', help='Set output filename when decoding a file.', dest="file_output")
 parser.add_argument('--disable-parts', help='Forces generated image not being split up in parts.', dest="disable_parts", action="store_true", default=False)
 parser.add_argument('--max-part-size', help='Max file size in bytes. The generated image will be split up in parts if it is larger. Default is 16000000 bytes.', dest="max_part_size", default=16000000)
-parser.add_argument('-v', '--version', action='version', version='%(prog)s 1.0')
 args = parser.parse_args()
 
 file_encode = args.file_encode
